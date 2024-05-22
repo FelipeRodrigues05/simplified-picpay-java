@@ -2,6 +2,7 @@ package com.nucleus.picpay.services;
 
 import com.nucleus.picpay.domain.user.User;
 import com.nucleus.picpay.domain.user.UserType;
+import com.nucleus.picpay.dto.UserDTO;
 import com.nucleus.picpay.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,7 +24,11 @@ public class UserService {
         return this.userRepository.findByDocument(document).orElseThrow(() -> new Exception("User not found"));
     }
 
-    public User saveUser(User user) {
-        return this.userRepository.save(user);
+    public void createUser(UserDTO data) {
+        
+    }
+
+    public void saveUser(User user) {
+        this.userRepository.save(user);
     }
 }
