@@ -18,4 +18,12 @@ public class UserService {
 
         if(sender.getBalance().compareTo(amount) > 0) throw new Exception("Insufficient balance");
     }
+
+    public User findUserByDocument(String document) throws Exception {
+        return this.userRepository.findByDocument(document).orElseThrow(() -> new Exception("User not found"));
+    }
+
+    public User saveUser(User user) {
+        return this.userRepository.save(user);
+    }
 }
