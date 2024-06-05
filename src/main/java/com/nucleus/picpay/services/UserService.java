@@ -24,10 +24,6 @@ public class UserService {
         return this.userRepository.findByDocument(document).orElseThrow(() -> new Exception("User not found"));
     }
 
-    public void createUser(UserDTO data) {
-        
-    }
-
     public void saveUser(User user) {
         this.userRepository.save(user);
     }
